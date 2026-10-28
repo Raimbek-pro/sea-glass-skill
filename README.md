@@ -7,6 +7,18 @@
 
 > Frosted color, softly tumbled contours, and a little seaside whimsy — universally compatible across **Web (HTML/React/Vue)** and **Mobile (Jetpack Compose / Compose Multiplatform)**.
 
+<p align="center">
+  <img src="assets/instagram-web.png" width="100%" alt="Sea Glass Instagram Adaptive Web Layout" />
+</p>
+
+<p align="center">
+  <img src="assets/sanctuary-hub.jpg" width="48%" alt="Sea Glass Sanctuary Hub Dial" />
+  <img src="assets/sea-glass-inspiration.jpg" width="48%" alt="Physical ocean-tumbled beach glass inspiration" />
+</p>
+<p align="center">
+  <em>Physical beach glass optics (right) translated into live, tactile software interfaces (left & top).</em>
+</p>
+
 ---
 
 ## 🌊 Live Interactive Web Demos
