@@ -1,0 +1,16 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "sea-glass",
+  "displayName": "Sea Glass UI Foundation",
+  "version": "1.0.0",
+  "description": "Tactile, sand-tumbled frosted glass UI across Web & Jetpack Compose with physical optics, volumetric Oklab tinting, and live shaders.",
+  "author": "Raiymbek Omarov",
+  "homepage": "https://github.com/Raimbek-pro/sea-glass-skill",
+  "repository": "https://github.com/Raimbek-pro/sea-glass-skill.git",
+  "license": "Apache-2.0",
+  "suggestedPrompts": [
+    "Design a modern social media feed using Sea Glass components",
+    "Add frosted glass buttons with physical press depression to this screen",
+    "Create an ambient climate control card with volumetric Oklab tinting"
+  ]
+}

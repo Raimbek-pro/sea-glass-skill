@@ -1,0 +1,34 @@
+{
+  "name": "@raimbek-pro/sea-glass",
+  "version": "1.0.0",
+  "description": "Tactile, sand-tumbled frosted glass UI foundation for Web and Jetpack Compose",
+  "type": "module",
+  "main": "sea-glass.mjs",
+  "module": "sea-glass.mjs",
+  "exports": {
+    ".": "./sea-glass.mjs"
+  },
+  "scripts": {
+    "start": "python3 -m http.server 8080 --directory web",
+    "test": "node --test web/tests/*.mjs"
+  },
+  "keywords": [
+    "sea-glass",
+    "glassmorphism",
+    "frosted-glass",
+    "tactile-ui",
+    "oklab",
+    "ui-components",
+    "ai-skill"
+  ],
+  "author": "Raiymbek Omarov",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Raimbek-pro/sea-glass-skill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Raimbek-pro/sea-glass-skill/issues"
+  },
+  "homepage": "https://github.com/Raimbek-pro/sea-glass-skill#readme"
+}
