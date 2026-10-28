@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f4f5f0">
+  <title>Sea Glass — Instagram Web</title>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    :root {
+      --bg-page: #f5f6f2;
+      --bg-card: #fcfdfa;
+      --border-subtle: #dfe4dc;
+      --ink: #1f2f29;
+      --muted: #64756c;
+      --coral: #df6977;
+    }
+    body {
+      background: var(--bg-page);
+      color: var(--ink);
+      font-family: var(--sans);
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Overall App Shell */
+    .app-layout {
+      display: flex;
+      min-height: 100vh;
+      max-width: 1380px;
+      margin: 0 auto;
+    }
+
+    /* Left Sidebar */
+    .app-sidebar {
+      width: 250px;
+      padding: 28px 20px 24px;
+      border-right: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      box-sizing: border-box;
+      background: rgba(245, 246, 242, 0.7);
+      backdrop-filter: blur(12px);
+      z-index: 50;
+    }
+    .sidebar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      margin-bottom: 36px;
+      padding-left: 6px;
+    }
+    .brand-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #75a38b;
+    }
+    .nav-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+    }
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .nav-item:hover {
+      background: rgba(0, 0, 0, 0.03);
+      color: var(--ink);
+    }
+    .nav-item.active {
+      color: var(--ink);
+      font-weight: 700;
+    }
+    .nav-item svg {
+      width: 22px;
+      height: 22px;
+    }
+    .create-btn {
+      width: 100%;
+      height: 46px;
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    /* Main Feed Column */
+    .main-stream {
+      flex: 1;
+      max-width: 630px;
+      padding: 28px 24px 60px;
+      margin: 0 auto;
+    }
+
+    /* Stories Bar */
+    .stories-bar {
+      padding: 16px 18px;
+      margin-bottom: 24px;
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .stories-bar::-webkit-scrollbar {
+      display: none;
+    }
+    .story-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .story-ring {
+      width: 64px;
+      height: 64px;
+      display: grid;
+      place-items: center;
+    }
+    .story-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: white;
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--glass-ink, var(--ink));
+    }
+    .story-label {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* Post Card */
+    .feed-card {
+      padding: 18px;
+      margin-bottom: 28px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 24px;
+      background: var(--bg-card);
+      box-shadow: 0 4px 20px rgba(35, 55, 45, 0.03);
+    }
+    .card-author-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .card-author-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .author-thumb {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 12px;
+      color: white;
+    }
+    .author-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .author-loc {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+    .card-media {
+      width: 100%;
+      height: 380px;
+      border-radius: 18px;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+    }
+    .floating-pill {
+      height: 42px;
+      padding: 0 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--serif);
+      font-size: 14px;
+    }
+    .card-actions-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+    .card-icon-btn {
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      color: var(--ink);
+      transition: transform 0.12s;
+    }
+    .card-icon-btn:active {
+      transform: scale(0.85);
+    }
+    .card-icon-btn.liked {
+      color: var(--coral);
+    }
+    .card-likes-count {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .card-caption-line {
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+    .card-caption-line strong {
+      font-weight: 700;
+      margin-right: 4px;
+    }
+    .card-comments-link {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px;
+      cursor: pointer;
+    }
+    .quick-comment-box {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .quick-comment-input {
+      flex: 1;
+      border: none;
+      background: transparent;
+      font-size: 12px;
+      color: var(--ink);
+      outline: none;
+    }
+    .post-comment-btn {
+      font-size: 12px;
+      font-weight: 700;
+      color: #3b6d5e;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    /* Right Sidebar (Suggestions & Profile) */
+    .app-aside {
+      width: 320px;
+      padding: 34px 24px 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+    }
+    .my-profile-tile {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .my-avatar-disc {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+    }
+    .my-avatar-inner {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #86a796, #b5d0eb);
+      color: white;
+      font-weight: 700;
+      font-size: 14px;
+      display: grid;
+      place-items: center;
+    }
+    .suggestions-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .suggestion-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .sugg-user-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .sugg-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #e1e9df;
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+    .sugg-btn {
+      height: 28px;
+      padding: 0 14px;
+      font-size: 11px;
+      font-weight: 600;
+      display: grid;
+      place-items: center;
+    }
+    .aside-footer {
+      margin-top: auto;
+      font-size: 11px;
+      line-height: 1.7;
+      color: #92a39a;
+    }
+
+    /* Top Navigation for Mobile & Links */
+    .mobile-header {
+      display: none;
+      height: 60px;
+      padding: 0 20px;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(245, 246, 242, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-subtle);
+      position: sticky;
+      top: 0;
+      z-index: 90;
+    }
+    .mobile-bottom-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 62px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(14px);
+      border-top: 1px solid var(--border-subtle);
+      align-items: center;
+      justify-content: space-around;
+      z-index: 100;
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 1160px) {
+      .app-aside {
+        display: none;
+      }
+      .app-sidebar {
+        width: 80px;
+        padding: 24px 10px;
+        align-items: center;
+      }
+      .sidebar-brand span, .nav-item span, .create-btn span {
+        display: none;
+      }
+      .sidebar-brand {
+        margin-bottom: 28px;
+        padding-left: 0;
+      }
+      .create-btn {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        padding: 0;
+      }
+      .nav-item {
+        padding: 12px;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .app-sidebar {
+        display: none;
+      }
+      .mobile-header {
+        display: flex;
+      }
+      .mobile-bottom-bar {
+        display: flex;
+      }
+      .main-stream {
+        padding: 16px 14px 80px;
+      }
+      .feed-card {
+        padding: 14px;
+        border-radius: 20px;
+      }
+      .card-media {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Mobile Top Bar -->
+  <header class="mobile-header">
+    <div style="font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--ink);">
+      sea glass · instagram
+    </div>
+    <div style="display: flex; gap: 12px; align-items: center;">
+      <button class="glass" data-glass data-shape="disc" data-palette="mint" data-seed="11" style="width: 36px; height: 36px; display: grid; place-items: center;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+      </button>
+      <button class="glass" data-glass data-shape="disc" data-palette="lagoon" data-seed="22" style="width: 36px; height: 36px; display: grid; place-items: center;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 16px; height: 16px;"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <!-- Desktop / Tablet Sidebar -->
+    <aside class="app-sidebar">
+      <a href="./index.html" class="sidebar-brand">
+        <span class="brand-dot"></span>
+        <span>sea glass</span>
+      </a>
+
+      <nav class="nav-list">
+        <a class="nav-item active" href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>Feed</span>
+        </a>
+        <a class="nav-item" href="./sanctuary.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <span>Sanctuary</span>
+        </a>
+        <a class="nav-item" href="./index.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          <span>Inspector Lab</span>
+        </a>
+        <a class="nav-item" href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          <span>Messages</span>
+        </a>
+        <a class="nav-item" href="#">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span>Activity</span>
+        </a>
+      </nav>
+
+      <!-- Tactile Create Button -->
+      <button class="glass create-btn" data-glass data-shape="capsule" data-palette="lagoon" data-seed="333">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="width: 18px; height: 18px;"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        <span>Create Post</span>
+      </button>
+
+      <!-- Current User Minibar -->
+      <div style="display: flex; align-items: center; gap: 10px; margin-top: 14px; padding: 6px;">
+        <div class="glass" data-glass data-shape="disc" data-palette="mint" data-seed="555" style="width: 36px; height: 36px; display: grid; place-items: center;">
+          <div style="width: 26px; height: 26px; border-radius: 50%; background: #6b8f7d; color: white; display: grid; place-items: center; font-size: 10px; font-weight: bold;">RO</div>
+        </div>
+        <div style="overflow: hidden;">
+          <div style="font-size: 13px; font-weight: 700; color: var(--ink);">raiymbek</div>
+          <div style="font-size: 11px; color: var(--muted);">Raiymbek Omarov</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Feed Column -->
+    <main class="main-stream">
+      <!-- Stories Carousel -->
+      <div class="glass stories-bar" data-glass data-shape="rounded" data-palette="mint" data-seed="701">
+        <div class="story-unit">
+          <div class="glass story-ring" data-glass data-shape="disc" data-palette="lagoon" data-seed="801">
+            <div class="story-avatar">RO</div>
+          </div>
+          <span class="story-label">Your Story</span>
+        </div>
+        <div class="story-unit">
+          <div class="glass story-ring" data-glass data-shape="disc" data-palette="mint" data-seed="802">
+            <div class="story-avatar">ST</div>
+          </div>
+          <span class="story-label">Studio</span>
+        </div>
+        <div class="story-unit">
+          <div class="glass story-ring" data-glass data-shape="disc" data-palette="amber" data-seed="803">
+            <div class="story-avatar">CE</div>
+          </div>
+          <span class="story-label">Ceramics</span>
+        </div>
+        <div class="story-unit">
+          <div class="glass story-ring" data-glass data-shape="disc" data-palette="rose" data-seed="804">
+            <div class="story-avatar">SU</div>
+          </div>
+          <span class="story-label">Sunset</span>
+        </div>
+        <div class="story-unit">
+          <div class="glass story-ring" data-glass data-shape="disc" data-palette="lilac" data-seed="805">
+            <div class="story-avatar">NO</div>
+          </div>
+          <span class="story-label">Notes</span>
+        </div>
+        <div class="story-unit">
+          <div class="glass story-ring" data-glass data-shape="disc" data-palette="lagoon" data-seed="806">
+            <div class="story-avatar">OC</div>
+          </div>
+          <span class="story-label">Ocean</span>
+        </div>
+      </div>
+
+      <!-- POST 1: Cala Luna -->
+      <article class="feed-card">
+        <div class="card-author-row">
+          <div class="card-author-left">
+            <div class="glass" data-glass data-shape="disc" data-palette="lagoon" data-seed="901" style="width: 44px; height: 44px; display: grid; place-items: center;">
+              <div class="author-thumb" style="background: linear-gradient(135deg, #86a796, #b5d0eb);">RO</div>
+            </div>
+            <div>
+              <div class="author-name">raiymbek <span style="font-weight: normal; color: var(--muted);">· 2h</span></div>
+              <div class="author-loc">Cala Luna, Sardinia</div>
+            </div>
+          </div>
+          <button class="glass" data-glass data-shape="capsule" data-palette="lagoon" data-seed="902" style="height: 30px; padding: 0 14px; font-size: 11px; font-weight: 600;">
+            Follow
+          </button>
+        </div>
+
+        <div class="card-media" style="background: linear-gradient(135deg, #8cb8b0 0%, #b2d6ce 35%, #e6c4b2 75%, #779ca7 100%);">
+          <!-- Floating Frosted Glass Badge -->
+          <div class="glass floating-pill" data-glass data-shape="capsule" data-palette="lagoon" data-seed="903">
+            <svg viewBox="0 0 24 24" fill="#df6977" stroke="#df6977" stroke-width="2" style="width: 15px; height: 15px;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            <span style="font-weight: 600;">Cala Luna · Tumbled Horizon</span>
+          </div>
+        </div>
+
+        <div class="card-actions-row">
+          <button class="card-icon-btn like-trigger" aria-label="Like">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </button>
+          <button class="card-icon-btn" aria-label="Comment">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 23px; height: 23px;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          </button>
+          <button class="card-icon-btn" aria-label="Share">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 22px; height: 22px;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          </button>
+          <button class="card-icon-btn bookmark-trigger" aria-label="Save" style="margin-left: auto;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 22px; height: 22px;"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+          </button>
+        </div>
+
+        <div class="card-likes-count">1,842 likes</div>
+        <div class="card-caption-line">
+          <strong>raiymbek</strong> where ocean tides tumble rough glass into smooth beach gemstones.
+        </div>
+        <div class="card-comments-link">View all 128 comments</div>
+
+        <div class="quick-comment-box">
+          <input type="text" class="quick-comment-input" placeholder="Add a comment on the glass...">
+          <button class="post-comment-btn">Post</button>
+        </div>
+      </article>
+
+      <!-- POST 2: Ceramic Studio -->
+      <article class="feed-card">
+        <div class="card-author-row">
+          <div class="card-author-left">
+            <div class="glass" data-glass data-shape="disc" data-palette="amber" data-seed="911" style="width: 44px; height: 44px; display: grid; place-items: center;">
+              <div class="author-thumb" style="background: linear-gradient(135deg, #e4aa83, #eed3a6);">SV</div>
+            </div>
+            <div>
+              <div class="author-name">sora.vale <span style="font-weight: normal; color: var(--muted);">· 5h</span></div>
+              <div class="author-loc">Kyoto Woodfire Studio</div>
+            </div>
+          </div>
+          <button class="glass" data-glass data-shape="capsule" data-palette="amber" data-seed="912" style="height: 30px; padding: 0 14px; font-size: 11px; font-weight: 600;">
+            Follow
+          </button>
+        </div>
+
+        <div class="card-media" style="background: linear-gradient(135deg, #ddb194 0%, #f1cfb3 45%, #c8ddcf 100%);">
+          <div class="glass floating-pill" data-glass data-shape="capsule" data-palette="amber" data-seed="913">
+            <span style="font-weight: 600;">Ash & Clay Vases</span>
+          </div>
+        </div>
+
+        <div class="card-actions-row">
+          <button class="card-icon-btn like-trigger" aria-label="Like">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          </button>
+          <button class="card-icon-btn" aria-label="Comment">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 23px; height: 23px;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          </button>
+          <button class="card-icon-btn" aria-label="Share">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 22px; height: 22px;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          </button>
+          <button class="card-icon-btn bookmark-trigger" aria-label="Save" style="margin-left: auto;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 22px; height: 22px;"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+          </button>
+        </div>
+
+        <div class="card-likes-count">642 likes</div>
+        <div class="card-caption-line">
+          <strong>sora.vale</strong> raw stoneware glazed with sea minerals before the 72-hour kiln firing.
+        </div>
+        <div class="card-comments-link">View all 42 comments</div>
+
+        <div class="quick-comment-box">
+          <input type="text" class="quick-comment-input" placeholder="Add a comment on the glass...">
+          <button class="post-comment-btn">Post</button>
+        </div>
+      </article>
+    </main>
+
+    <!-- Desktop Right Sidebar -->
+    <aside class="app-aside">
+      <!-- Current User Profile Tile -->
+      <div class="my-profile-tile">
+        <div class="glass my-avatar-disc" data-glass data-shape="disc" data-palette="mint" data-seed="950">
+          <div class="my-avatar-inner">RO</div>
+        </div>
+        <div style="flex: 1;">
+          <div style="font-weight: 700; font-size: 14px; color: var(--ink);">raiymbek</div>
+          <div style="font-size: 12px; color: var(--muted);">Raiymbek Omarov</div>
+        </div>
+        <button class="glass" data-glass data-shape="capsule" data-palette="lagoon" data-seed="951" style="height: 28px; padding: 0 12px; font-size: 11px; font-weight: 600;">
+          Switch
+        </button>
+      </div>
+
+      <!-- Suggestions For You -->
+      <div class="suggestions-header">
+        <span>Suggested For You</span>
+        <a href="#" style="color: var(--ink); text-decoration: none;">See All</a>
+      </div>
+
+      <div class="suggestion-item">
+        <div class="sugg-user-info">
+          <div class="sugg-avatar" style="background: #c8ded4;">TL</div>
+          <div>
+            <div style="font-size: 12px; font-weight: 700; color: var(--ink);">tide_labs</div>
+            <div style="font-size: 10px; color: var(--muted);">Followed by sora.vale + 4 more</div>
+          </div>
+        </div>
+        <button class="glass sugg-btn" data-glass data-shape="capsule" data-palette="mint" data-seed="961">Follow</button>
+      </div>
+
+      <div class="suggestion-item">
+        <div class="sugg-user-info">
+          <div class="sugg-avatar" style="background: #e9ced5;">MA</div>
+          <div>
+            <div style="font-size: 12px; font-weight: 700; color: var(--ink);">minimal_arch</div>
+            <div style="font-size: 10px; color: var(--muted);">New to Sea Glass</div>
+          </div>
+        </div>
+        <button class="glass sugg-btn" data-glass data-shape="capsule" data-palette="rose" data-seed="962">Follow</button>
+      </div>
+
+      <div class="suggestion-item">
+        <div class="sugg-user-info">
+          <div class="sugg-avatar" style="background: #eed9c2;">KC</div>
+          <div>
+            <div style="font-size: 12px; font-weight: 700; color: var(--ink);">kyoto_ceramics</div>
+            <div style="font-size: 10px; color: var(--muted);">Popular in Craft</div>
+          </div>
+        </div>
+        <button class="glass sugg-btn" data-glass data-shape="capsule" data-palette="amber" data-seed="963">Follow</button>
+      </div>
+
+      <div class="aside-footer">
+        About · Help · Press · API · Jobs · Privacy · Terms<br>
+        © 2026 SEA GLASS UI FOUNDATION
+      </div>
+    </aside>
+  </div>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <nav class="mobile-bottom-bar">
+    <a href="#" style="color: var(--ink);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg></a>
+    <a href="./sanctuary.html" style="color: var(--muted);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;"><circle cx="12" cy="12" r="5"></circle></svg></a>
+    <button class="glass" data-glass data-shape="disc" data-palette="lagoon" data-seed="999" style="width: 40px; height: 40px; display: grid; place-items: center;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 18px; height: 18px;"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+    </button>
+    <a href="#" style="color: var(--muted);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></a>
+    <a href="./index.html" style="color: var(--muted);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;"><circle cx="12" cy="12" r="3"></circle></svg></a>
+  </nav>
+
+  <script type="module">
+    import { mountGlass } from './sea-glass.mjs';
+
+    // Auto-mount all elements with data-glass
+    const instances = new Map();
+    document.querySelectorAll('[data-glass]').forEach(el => {
+      const palette = el.dataset.palette || 'lagoon';
+      const shape = el.dataset.shape || 'rounded';
+      const seed = Number(el.dataset.seed) || 42;
+      const renderer = mountGlass(el, {
+        shape,
+        palette,
+        seed,
+        settings: {
+          frost: 0.55,
+          grain: 0.48,
+          tumble: 0.025,
+          thickness: shape === 'disc' ? 7 : 5,
+          bulge: 0.65,
+          elevation: 6,
+          seed,
+        }
+      });
+      instances.set(el, renderer);
+
+      // Tactile give on press
+      el.addEventListener('pointerdown', () => renderer.update({ elevation: 2 }));
+      const restore = () => renderer.update({ elevation: 6 });
+      el.addEventListener('pointerup', restore);
+      el.addEventListener('pointerleave', restore);
+    });
+
+    // Like buttons with heart toggle
+    document.querySelectorAll('.like-trigger').forEach(btn => {
+      let liked = false;
+      btn.addEventListener('click', () => {
+        liked = !liked;
+        const icon = btn.querySelector('svg');
+        if (liked) {
+          btn.classList.add('liked');
+          icon.setAttribute('fill', '#df6977');
+          icon.setAttribute('stroke', '#df6977');
+        } else {
+          btn.classList.remove('liked');
+          icon.setAttribute('fill', 'none');
+          icon.setAttribute('stroke', 'currentColor');
+        }
+      });
+    });
+
+    // Bookmark buttons toggle
+    document.querySelectorAll('.bookmark-trigger').forEach(btn => {
+      let bookmarked = false;
+      btn.addEventListener('click', () => {
+        bookmarked = !bookmarked;
+        const icon = btn.querySelector('svg');
+        if (bookmarked) {
+          icon.setAttribute('fill', 'currentColor');
+        } else {
+          icon.setAttribute('fill', 'none');
+        }
+      });
+    });
+
+    // Follow toggle buttons
+    document.querySelectorAll('.sugg-btn').forEach(btn => {
+      let following = false;
+      btn.addEventListener('click', () => {
+        following = !following;
+        btn.textContent = following ? 'Following' : 'Follow';
+      });
+    });
+  </script>
+</body>
+</html>

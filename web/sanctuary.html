@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f4f5f0">
+  <title>Sea Glass — Sanctuary Smart Home Hub</title>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    .hub-container {
+      max-width: 480px;
+      margin: 32px auto 60px;
+      padding: 26px;
+      background: radial-gradient(ellipse at 50% 25%, #f6f8f4 0%, #e7eee6 85%);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: 0 16px 40px rgba(37, 61, 54, 0.06);
+    }
+    .hub-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+    }
+    .hub-title {
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 3.5px;
+      color: var(--ink);
+    }
+    .hub-subtitle {
+      font-size: 9px;
+      letter-spacing: 1.4px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .optimal-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.65);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 6px 10px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #4a856a;
+    }
+    .zones-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 26px;
+    }
+    .zone-btn {
+      flex: 1;
+      height: 36px;
+      border-radius: 18px;
+      font-size: 11px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+    }
+    .dial-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .step-btn {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      font-size: 24px;
+      font-weight: 300;
+      color: var(--glass-ink, var(--ink));
+    }
+    .thermostat-dial {
+      width: 176px;
+      height: 176px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .temp-number {
+      font-family: var(--serif);
+      font-size: 46px;
+      font-weight: 500;
+      line-height: 1;
+      color: var(--glass-ink, var(--ink));
+    }
+    .temp-mode {
+      font-size: 10px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-top: 4px;
+      color: var(--glass-ink, var(--ink));
+      opacity: 0.8;
+    }
+    .temp-info {
+      font-size: 9px;
+      letter-spacing: 0.8px;
+      margin-top: 4px;
+      color: var(--glass-ink, var(--ink));
+      opacity: 0.6;
+    }
+    .mode-tray {
+      height: 44px;
+      display: flex;
+      padding: 3px;
+      margin-bottom: 22px;
+    }
+    .mode-btn {
+      flex: 1;
+      height: 100%;
+      border-radius: 20px;
+      font-size: 11px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      color: var(--glass-ink, var(--ink));
+      transition: all 0.2s;
+    }
+    .mode-btn.active {
+      background: rgba(255, 255, 255, 0.7);
+      font-weight: 700;
+    }
+    .devices-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .device-card {
+      padding: 14px;
+      min-height: 110px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .device-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .device-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--glass-ink, var(--ink));
+    }
+    .mini-toggle {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      font-size: 9px;
+      font-weight: bold;
+    }
+    .device-slider {
+      width: 100%;
+      margin: 8px 0 4px;
+    }
+    .device-status {
+      font-size: 10px;
+      color: var(--glass-ink, var(--ink));
+      opacity: 0.75;
+    }
+    .nav-pills {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .nav-pill {
+      font-size: 12px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--muted);
+      border: 1px solid var(--line);
+    }
+    .nav-pill.active {
+      background: var(--ink);
+      color: white;
+      border-color: var(--ink);
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Sea glass playground home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>sea glass<span class="brand-detail">UNIVERSAL WEB SUITE</span></span>
+    </a>
+    <nav class="nav-pills">
+      <a class="nav-pill" href="./index.html">Components</a>
+      <a class="nav-pill" href="./instagram.html">Instagram</a>
+      <a class="nav-pill active" href="./sanctuary.html">Sanctuary</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hub-container">
+      <!-- Header -->
+      <div class="hub-header">
+        <div>
+          <div class="hub-title">SANCTUARY</div>
+          <div class="hub-subtitle">CLIMATE & MOOD HUB</div>
+        </div>
+        <div class="optimal-badge">
+          <div class="status-dot"></div>
+          <span>OPTIMAL</span>
+        </div>
+      </div>
+
+      <!-- Zone Selector Pills -->
+      <div class="zones-row">
+        <button class="glass zone-btn" data-glass data-shape="capsule" data-palette="lagoon" data-seed="101" style="font-weight: 600;">Living</button>
+        <button class="glass zone-btn" data-glass data-shape="capsule" data-palette="mint" data-seed="102">Studio</button>
+        <button class="glass zone-btn" data-glass data-shape="capsule" data-palette="rose" data-seed="103">Bedroom</button>
+        <button class="glass zone-btn" data-glass data-shape="capsule" data-palette="amber" data-seed="104">Sunroom</button>
+      </div>
+
+      <!-- Central Thermostat Dial -->
+      <div class="dial-row">
+        <button class="glass step-btn" id="temp-down" data-glass data-shape="disc" data-palette="lagoon" data-seed="201">−</button>
+        <div class="glass thermostat-dial" data-glass data-shape="disc" data-palette="lagoon" data-seed="210">
+          <div class="temp-number" id="temp-val">21.5°</div>
+          <div class="temp-mode" id="temp-mode-label">COOLING</div>
+          <div class="temp-info">48% RH · 20.8° NOW</div>
+        </div>
+        <button class="glass step-btn" id="temp-up" data-glass data-shape="disc" data-palette="lagoon" data-seed="202">+</button>
+      </div>
+
+      <!-- Mode Tray -->
+      <div class="glass mode-tray" data-glass data-shape="capsule" data-palette="lagoon" data-seed="301">
+        <button class="mode-btn active" data-mode="Auto">Auto</button>
+        <button class="mode-btn" data-mode="Cool">Cool</button>
+        <button class="mode-btn" data-mode="Eco">Eco</button>
+        <button class="mode-btn" data-mode="Heat">Heat</button>
+      </div>
+
+      <!-- Devices Grid -->
+      <div class="devices-grid">
+        <!-- Breeze -->
+        <div class="glass device-card" data-glass data-shape="rounded" data-palette="lagoon" data-seed="401">
+          <div class="device-header">
+            <span class="device-name">Breeze</span>
+            <button class="glass mini-toggle" id="fan-toggle" data-glass data-shape="disc" data-palette="lagoon" data-seed="410">ON</button>
+          </div>
+          <div>
+            <input type="range" class="device-slider" id="fan-speed" min="0" max="100" value="65">
+            <div class="device-status" id="fan-status">Flow: 65%</div>
+          </div>
+        </div>
+
+        <!-- Amber Glow -->
+        <div class="glass device-card" data-glass data-shape="rounded" data-palette="amber" data-seed="501">
+          <div class="device-header">
+            <span class="device-name">Amber Glow</span>
+            <button class="glass mini-toggle" id="light-toggle" data-glass data-shape="disc" data-palette="amber" data-seed="510">ON</button>
+          </div>
+          <div>
+            <input type="range" class="device-slider" id="light-slider" min="0" max="100" value="80">
+            <div class="device-status" id="light-status">2700K · 80%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module">
+    import { mountGlass } from './sea-glass.mjs';
+
+    const instances = new Map();
+    document.querySelectorAll('[data-glass]').forEach(el => {
+      const palette = el.dataset.palette || 'lagoon';
+      const shape = el.dataset.shape || 'rounded';
+      const seed = Number(el.dataset.seed) || 42;
+      const renderer = mountGlass(el, {
+        shape,
+        palette,
+        seed,
+        settings: {
+          frost: 0.58,
+          grain: 0.45,
+          tumble: 0.025,
+          thickness: shape === 'disc' ? 8 : 5,
+          bulge: 0.70,
+          elevation: 6,
+          seed,
+        }
+      });
+      instances.set(el, renderer);
+
+      el.addEventListener('pointerdown', () => renderer.update({ elevation: 2 }));
+      const restore = () => renderer.update({ elevation: 6 });
+      el.addEventListener('pointerup', restore);
+      el.addEventListener('pointerleave', restore);
+    });
+
+    // Temperature controls
+    let temp = 21.5;
+    const tempVal = document.getElementById('temp-val');
+    document.getElementById('temp-down').addEventListener('click', () => {
+      if (temp > 16) temp = Math.round((temp - 0.5) * 10) / 10;
+      tempVal.textContent = temp.toFixed(1) + '°';
+    });
+    document.getElementById('temp-up').addEventListener('click', () => {
+      if (temp < 30) temp = Math.round((temp + 0.5) * 10) / 10;
+      tempVal.textContent = temp.toFixed(1) + '°';
+    });
+
+    // Mode buttons
+    const modeBtns = document.querySelectorAll('.mode-btn');
+    const modeLabel = document.getElementById('temp-mode-label');
+    modeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        modeBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        modeLabel.textContent = btn.dataset.mode.toUpperCase();
+      });
+    });
+
+    // Fan toggle & speed
+    let fanOn = true;
+    const fanToggle = document.getElementById('fan-toggle');
+    const fanSpeed = document.getElementById('fan-speed');
+    const fanStatus = document.getElementById('fan-status');
+    fanToggle.addEventListener('click', () => {
+      fanOn = !fanOn;
+      fanToggle.textContent = fanOn ? 'ON' : 'OFF';
+      fanStatus.textContent = fanOn ? `Flow: ${fanSpeed.value}%` : 'Suspended';
+    });
+    fanSpeed.addEventListener('input', (e) => {
+      if (fanOn) fanStatus.textContent = `Flow: ${e.target.value}%`;
+    });
+
+    // Light toggle & slider
+    let lightOn = true;
+    const lightToggle = document.getElementById('light-toggle');
+    const lightSlider = document.getElementById('light-slider');
+    const lightStatus = document.getElementById('light-status');
+    lightToggle.addEventListener('click', () => {
+      lightOn = !lightOn;
+      lightToggle.textContent = lightOn ? 'ON' : 'OFF';
+      lightStatus.textContent = lightOn ? `2700K · ${lightSlider.value}%` : 'Dimmed';
+    });
+    lightSlider.addEventListener('input', (e) => {
+      if (lightOn) lightStatus.textContent = `2700K · ${e.target.value}%`;
+    });
+  </script>
+</body>
+</html>
