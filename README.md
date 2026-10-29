@@ -1,11 +1,12 @@
 # Sea Glass — Universal Design Foundation & AI Skill
 
 [![Live Web Showcase](https://img.shields.io/badge/Live_Demo-Instagram_&_Sanctuary-2f647c?style=for-the-badge&logo=googlechrome&logoColor=white)](https://raimbek-pro.github.io/sea-glass-skill/instagram.html)
+[![iOS & SwiftUI](https://img.shields.io/badge/iOS_•_SwiftUI-Xcode_Project-007AFF?style=for-the-badge&logo=swift&logoColor=white)](ios)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-396c5a?style=for-the-badge)](LICENSE)
 [![Maven Central](https://img.shields.io/badge/Maven_Central-0.1.0-865733?style=for-the-badge&logo=android)](https://central.sonatype.com/artifact/dev.mttmcknn/sea-glass/0.1.0)
 [![Universal AI Skill](https://img.shields.io/badge/AI_Skill-Antigravity_•_Cursor_•_Claude-71388b?style=for-the-badge)](SKILL.md)
 
-> Frosted color, softly tumbled contours, and a little seaside whimsy — universally compatible across **Web (HTML/React/Vue)** and **Mobile (Jetpack Compose / Compose Multiplatform)**.
+> Frosted color, softly tumbled contours, and a little seaside whimsy — universally compatible across **Web (HTML/React/Vue)**, **iOS (Swift / SwiftUI)**, and **Android / Multiplatform (Compose)**.
 
 <p align="center">
   <img src="assets/instagram-web.png" width="100%" alt="Sea Glass Instagram Adaptive Web Layout" />
@@ -142,6 +143,52 @@ fun LikeButton(onClick: () -> Unit) {
         shape = SeaGlassShape.Disc
     ) {
         Text("♥")
+    }
+}
+```
+
+---
+
+## 🍎 4. iOS & SwiftUI Implementation ("Liquid Glass")
+
+Native Apple integration combining Apple's liquid materials (`.ultraThinMaterial`) with physical Sea Glass optics (volumetric absorption, continuous corner curvature squircles, 315° rim catches, and transmitted ground halos).
+
+### Open in Xcode
+Open the included Xcode project directly:
+```bash
+open ios/SeaGlass.xcodeproj
+```
+Select **SeaGlassApp** and run on any iOS Simulator or physical iPhone (`CMD+R`). Includes:
+- 📸 **Instagram Scene**: Liquid frosted story halos, post cards, tactile reaction springs, and floating dock.
+- 🌡️ **Sanctuary Scene**: Circular thermostat dial with drag/step control, sensor capsules, and ambient toggles.
+- 🎛️ **Optics Playground**: Live tuning of palettes, continuous geometry, elevation, and frost.
+
+### Swift Package Manager (SPM)
+Add to your `Package.swift` or in Xcode (`File -> Add Package Dependencies`):
+```swift
+dependencies: [
+    .package(url: "https://github.com/Raimbek-pro/sea-glass-skill.git", branch: "main")
+]
+```
+
+### SwiftUI Usage
+```swift
+import SwiftUI
+import SeaGlass
+
+// Modifier on any view:
+Text("Coastal Breeze")
+    .padding(.horizontal, 20)
+    .padding(.vertical, 12)
+    .seaGlass(palette: .lagoon, shape: .rounded(22), elevation: 8, frost: 0.55)
+
+// Tactile Button with spring physics & haptics:
+SeaGlassButton(palette: .rose, shape: .capsule, elevation: 6, action: {
+    print("Pressed!")
+}) {
+    HStack(spacing: 8) {
+        Image(systemName: "heart.fill")
+        Text("Save Moment")
     }
 }
 ```

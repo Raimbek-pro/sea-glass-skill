@@ -1,0 +1,33 @@
+name: SeaGlass
+options:
+  bundleIdPrefix: dev.mttmcknn.seaglass
+  deploymentTarget:
+    iOS: "16.0"
+targets:
+  SeaGlass:
+    type: framework
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: SeaGlass/Sources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.mttmcknn.seaglass.framework
+        DEFINES_MODULE: YES
+        SWIFT_VERSION: "5.9"
+        CODE_SIGNING_ALLOWED: NO
+
+  SeaGlassApp:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: SeaGlass/Sources
+      - path: SeaGlassApp
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.mttmcknn.seaglass.app
+        INFOPLIST_FILE: SeaGlassApp/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        SWIFT_VERSION: "5.9"
+        CODE_SIGNING_ALLOWED: NO

@@ -179,7 +179,72 @@ val dynamicPalette = SeaGlassPalette.fromColorScheme(
 
 ---
 
-## 3. Shared Palettes & Optics
+## 3. iOS & SwiftUI Implementation ("Liquid Glass")
+
+Native SwiftUI integration combining Apple's system blur materials (`.ultraThinMaterial`) with physical Sea Glass optics (volumetric absorption, continuous corner curvature squircles, 315° rim catches, and transmitted ground halos).
+
+### Swift Package Manager (SPM) or Xcode Framework
+Open `ios/SeaGlass.xcodeproj` in Xcode or add the `SeaGlass` package:
+```swift
+dependencies: [
+    .package(url: "https://github.com/Raimbek-pro/sea-glass-skill.git", branch: "main")
+]
+```
+
+### A. View Modifier `.seaGlass()`
+Decorate any SwiftUI view:
+```swift
+Text("Tumbled Glass")
+    .font(.system(.body, design: .rounded))
+    .padding(.horizontal, 20)
+    .padding(.vertical, 12)
+    .seaGlass(
+        palette: .lagoon,
+        shape: .rounded(22),
+        elevation: 8,
+        frost: 0.55
+    )
+```
+
+### B. `SeaGlassSurface` & `SeaGlassButton`
+```swift
+// Container surface with auto-bound ink color & Oklab halo:
+SeaGlassSurface(
+    palette: .mint,
+    shape: .rounded(26),
+    elevation: 8,
+    frost: 0.6
+) {
+    VStack(alignment: .leading, spacing: 8) {
+        Text("Sanctuary Climate Hub")
+            .font(.system(size: 20, weight: .bold, design: .rounded))
+        Text("Volumetric pigment with micro-grain texture.")
+    }
+    .padding(20)
+}
+
+// Tactile button with spring depress physics & light haptics:
+SeaGlassButton(
+    palette: .rose,
+    shape: .capsule,
+    elevation: 6,
+    action: { /* trigger */ }
+) {
+    HStack(spacing: 8) {
+        Image(systemName: "heart.fill")
+        Text("Save Moment")
+    }
+}
+```
+
+### C. Continuous Apple Squircle Shapes
+- `.rounded(radius)`: Apple continuous curve squircle (`style: .continuous`)
+- `.capsule`: Tumbled stadium pill
+- `.disc`: Organic rounded pebble circle
+
+---
+
+## 4. Shared Palettes & Optics
 
 Both Web and Compose share the exact same 5 coastal palettes:
 

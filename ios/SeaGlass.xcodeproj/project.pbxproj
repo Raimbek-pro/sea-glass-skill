@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		023F05C1925021CDD248325A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E0F254AAF771866FFB69AC0 /* Assets.xcassets */; };
+		06D61061E3BE74A78F9CDB10 /* SeaGlassButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE536C03CDA38BFB3B690B5 /* SeaGlassButton.swift */; };
+		100F75231F128F3BAA7E6593 /* GrainGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE2F72F7DD816432BCC186C /* GrainGenerator.swift */; };
+		115A38456F32A25BFD1FF22B /* SeaGlassPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CE82946FD2D1A775E2B495 /* SeaGlassPalette.swift */; };
+		27727C00BD65A2C3EE1CCE54 /* SeaGlassSurface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10569C06A9CF93A5D2C97CA7 /* SeaGlassSurface.swift */; };
+		3A1AC1009F7D56F73E2697DB /* GrainGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE2F72F7DD816432BCC186C /* GrainGenerator.swift */; };
+		3A3747B6744007ABC4D2AF0B /* InstagramSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710FC8CD2B17DF130D2D6D6B /* InstagramSceneView.swift */; };
+		3C6F8A20E311FF2381A25BF9 /* ShowcaseSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0146D4FC6AB50B6A6F256A1B /* ShowcaseSceneView.swift */; };
+		45C13A41B48B8418C5293800 /* SeaGlassButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE536C03CDA38BFB3B690B5 /* SeaGlassButton.swift */; };
+		51651D2E2713143AF1C809D6 /* SeaGlassShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32904A73373CD1BE83BA3AE /* SeaGlassShape.swift */; };
+		55FAE1F1CF39B08ECDF806E3 /* SeaGlassApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9878EF1CE22B72C08753BEF3 /* SeaGlassApp.swift */; };
+		9581F676FCC408562AB1D10C /* SeaGlassModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61938CA979F6C5DD57E79641 /* SeaGlassModifier.swift */; };
+		A465ECE6A5A36F0DCC0A227B /* SeaGlassPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CE82946FD2D1A775E2B495 /* SeaGlassPalette.swift */; };
+		A6807BE1563A613FDC7D48CC /* SeaGlassSurface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10569C06A9CF93A5D2C97CA7 /* SeaGlassSurface.swift */; };
+		AF88D1B347E89E5CB54F1CDA /* SanctuarySceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AA2F8F3EF8CFB53FCB3FD1 /* SanctuarySceneView.swift */; };
+		B19AFFBD852D674E48B6AB86 /* SeaGlassModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61938CA979F6C5DD57E79641 /* SeaGlassModifier.swift */; };
+		E329293F02FAA370E00E6B25 /* SeaGlassShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32904A73373CD1BE83BA3AE /* SeaGlassShape.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0146D4FC6AB50B6A6F256A1B /* ShowcaseSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseSceneView.swift; sourceTree = "<group>"; };
+		10569C06A9CF93A5D2C97CA7 /* SeaGlassSurface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaGlassSurface.swift; sourceTree = "<group>"; };
+		23AA2F8F3EF8CFB53FCB3FD1 /* SanctuarySceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanctuarySceneView.swift; sourceTree = "<group>"; };
+		4E0F254AAF771866FFB69AC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		60D0B87ABEBA14511BF91FBB /* SeaGlass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SeaGlass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61938CA979F6C5DD57E79641 /* SeaGlassModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaGlassModifier.swift; sourceTree = "<group>"; };
+		710FC8CD2B17DF130D2D6D6B /* InstagramSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramSceneView.swift; sourceTree = "<group>"; };
+		73CE82946FD2D1A775E2B495 /* SeaGlassPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaGlassPalette.swift; sourceTree = "<group>"; };
+		7CE2F72F7DD816432BCC186C /* GrainGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrainGenerator.swift; sourceTree = "<group>"; };
+		9878EF1CE22B72C08753BEF3 /* SeaGlassApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaGlassApp.swift; sourceTree = "<group>"; };
+		99F3E6444F1DD69D3EDD18EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C0E9C5B3A55A6923A352269F /* SeaGlassApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SeaGlassApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAE536C03CDA38BFB3B690B5 /* SeaGlassButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaGlassButton.swift; sourceTree = "<group>"; };
+		E32904A73373CD1BE83BA3AE /* SeaGlassShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaGlassShape.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		3D3DB89091CEE002BEA55765 = {
+			isa = PBXGroup;
+			children = (
+				3F22B834D717EBB9ED18FA44 /* SeaGlassApp */,
+				CE0EFC5E24F6C93ACCB429B4 /* Sources */,
+				E67E9B25ACB91B2724B283CC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3F22B834D717EBB9ED18FA44 /* SeaGlassApp */ = {
+			isa = PBXGroup;
+			children = (
+				99F3E6444F1DD69D3EDD18EA /* Info.plist */,
+				8FC1795AEBF15B869050D7CA /* App */,
+				51A60591EF009582A87022D1 /* Assets */,
+				9B63FA13AF2F70D82B8BC694 /* Views */,
+			);
+			path = SeaGlassApp;
+			sourceTree = "<group>";
+		};
+		51A60591EF009582A87022D1 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				4E0F254AAF771866FFB69AC0 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		8FC1795AEBF15B869050D7CA /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9878EF1CE22B72C08753BEF3 /* SeaGlassApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		9B63FA13AF2F70D82B8BC694 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				710FC8CD2B17DF130D2D6D6B /* InstagramSceneView.swift */,
+				23AA2F8F3EF8CFB53FCB3FD1 /* SanctuarySceneView.swift */,
+				0146D4FC6AB50B6A6F256A1B /* ShowcaseSceneView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE0EFC5E24F6C93ACCB429B4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				7CE2F72F7DD816432BCC186C /* GrainGenerator.swift */,
+				CAE536C03CDA38BFB3B690B5 /* SeaGlassButton.swift */,
+				61938CA979F6C5DD57E79641 /* SeaGlassModifier.swift */,
+				73CE82946FD2D1A775E2B495 /* SeaGlassPalette.swift */,
+				E32904A73373CD1BE83BA3AE /* SeaGlassShape.swift */,
+				10569C06A9CF93A5D2C97CA7 /* SeaGlassSurface.swift */,
+			);
+			name = Sources;
+			path = SeaGlass/Sources;
+			sourceTree = "<group>";
+		};
+		E67E9B25ACB91B2724B283CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				60D0B87ABEBA14511BF91FBB /* SeaGlass.framework */,
+				C0E9C5B3A55A6923A352269F /* SeaGlassApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		61798911A04A6A4FA37328D7 /* SeaGlass */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 215B31E4C270E446671FBC79 /* Build configuration list for PBXNativeTarget "SeaGlass" */;
+			buildPhases = (
+				D12F9996953F9AEF36901AD6 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SeaGlass;
+			packageProductDependencies = (
+			);
+			productName = SeaGlass;
+			productReference = 60D0B87ABEBA14511BF91FBB /* SeaGlass.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B6E96E27BD0EAF65787791AD /* SeaGlassApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DD5716E993772781C7ED16D /* Build configuration list for PBXNativeTarget "SeaGlassApp" */;
+			buildPhases = (
+				64ADB423480F8BDC7D8F1ED4 /* Sources */,
+				73CD7C0A4724EF1627B82E0B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SeaGlassApp;
+			packageProductDependencies = (
+			);
+			productName = SeaGlassApp;
+			productReference = C0E9C5B3A55A6923A352269F /* SeaGlassApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0BA4D8BC14CCAC98005102EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 82F559417ADDFE8896E03D99 /* Build configuration list for PBXProject "SeaGlass" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 3D3DB89091CEE002BEA55765;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E67E9B25ACB91B2724B283CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				61798911A04A6A4FA37328D7 /* SeaGlass */,
+				B6E96E27BD0EAF65787791AD /* SeaGlassApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		73CD7C0A4724EF1627B82E0B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				023F05C1925021CDD248325A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		64ADB423480F8BDC7D8F1ED4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A1AC1009F7D56F73E2697DB /* GrainGenerator.swift in Sources */,
+				3A3747B6744007ABC4D2AF0B /* InstagramSceneView.swift in Sources */,
+				AF88D1B347E89E5CB54F1CDA /* SanctuarySceneView.swift in Sources */,
+				55FAE1F1CF39B08ECDF806E3 /* SeaGlassApp.swift in Sources */,
+				45C13A41B48B8418C5293800 /* SeaGlassButton.swift in Sources */,
+				B19AFFBD852D674E48B6AB86 /* SeaGlassModifier.swift in Sources */,
+				A465ECE6A5A36F0DCC0A227B /* SeaGlassPalette.swift in Sources */,
+				51651D2E2713143AF1C809D6 /* SeaGlassShape.swift in Sources */,
+				A6807BE1563A613FDC7D48CC /* SeaGlassSurface.swift in Sources */,
+				3C6F8A20E311FF2381A25BF9 /* ShowcaseSceneView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D12F9996953F9AEF36901AD6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				100F75231F128F3BAA7E6593 /* GrainGenerator.swift in Sources */,
+				06D61061E3BE74A78F9CDB10 /* SeaGlassButton.swift in Sources */,
+				9581F676FCC408562AB1D10C /* SeaGlassModifier.swift in Sources */,
+				115A38456F32A25BFD1FF22B /* SeaGlassPalette.swift in Sources */,
+				E329293F02FAA370E00E6B25 /* SeaGlassShape.swift in Sources */,
+				27727C00BD65A2C3EE1CCE54 /* SeaGlassSurface.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		352DF2F9380D15BAEA71DC8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SeaGlassApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.mttmcknn.seaglass.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		69460B00D6997DEA2BADA23B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.mttmcknn.seaglass.framework;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		9D07F92837CBFEF1E9049E35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.mttmcknn.seaglass.framework;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		BCA8AFEC3499B284507BFD28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		CCB9E942F086F173BDE089E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SeaGlassApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.mttmcknn.seaglass.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E2CEF113C8FE408089B81D34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		215B31E4C270E446671FBC79 /* Build configuration list for PBXNativeTarget "SeaGlass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D07F92837CBFEF1E9049E35 /* Debug */,
+				69460B00D6997DEA2BADA23B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5DD5716E993772781C7ED16D /* Build configuration list for PBXNativeTarget "SeaGlassApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCB9E942F086F173BDE089E0 /* Debug */,
+				352DF2F9380D15BAEA71DC8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		82F559417ADDFE8896E03D99 /* Build configuration list for PBXProject "SeaGlass" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2CEF113C8FE408089B81D34 /* Debug */,
+				BCA8AFEC3499B284507BFD28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0BA4D8BC14CCAC98005102EC /* Project object */;
+}
