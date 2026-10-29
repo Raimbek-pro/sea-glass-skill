@@ -3,20 +3,9 @@ options:
   bundleIdPrefix: dev.mttmcknn.seaglass
   deploymentTarget:
     iOS: "16.0"
-targets:
-  SeaGlass:
-    type: framework
-    platform: iOS
-    deploymentTarget: "16.0"
-    sources:
-      - path: SeaGlass/Sources
-    settings:
-      base:
-        PRODUCT_BUNDLE_IDENTIFIER: dev.mttmcknn.seaglass.framework
-        DEFINES_MODULE: YES
-        SWIFT_VERSION: "5.9"
-        CODE_SIGNING_ALLOWED: NO
+  createIntermediateGroups: true
 
+targets:
   SeaGlassApp:
     type: application
     platform: iOS
@@ -26,8 +15,38 @@ targets:
       - path: SeaGlassApp
     settings:
       base:
+        PRODUCT_NAME: SeaGlassApp
         PRODUCT_BUNDLE_IDENTIFIER: dev.mttmcknn.seaglass.app
         INFOPLIST_FILE: SeaGlassApp/Info.plist
         GENERATE_INFOPLIST_FILE: NO
         SWIFT_VERSION: "5.9"
         CODE_SIGNING_ALLOWED: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+
+  SeaGlass:
+    type: framework
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: SeaGlass/Sources
+    settings:
+      base:
+        PRODUCT_NAME: SeaGlass
+        PRODUCT_BUNDLE_IDENTIFIER: dev.mttmcknn.seaglass.framework
+        DEFINES_MODULE: YES
+        SWIFT_VERSION: "5.9"
+        CODE_SIGNING_ALLOWED: NO
+
+schemes:
+  SeaGlassApp:
+    build:
+      targets:
+        SeaGlassApp: all
+    run:
+      config: Debug
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release

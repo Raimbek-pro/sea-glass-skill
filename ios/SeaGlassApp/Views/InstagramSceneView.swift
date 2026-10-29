@@ -108,9 +108,16 @@ public struct InstagramSceneView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 20) {
                     // Header Bar
-                    headerBar
-                        .padding(.horizontal, 16)
-                        .padding(.top, 8)
+                    if #available(iOS 26.0, *) {
+                        headerBar
+                            .glassEffect()
+                            .padding(.horizontal, 16)
+                            .padding(.top, 8)
+                    } else {
+                        headerBar
+                            .padding(.horizontal, 16)
+                            .padding(.top, 8)
+                    }
 
                     // Stories Row
                     storiesRow

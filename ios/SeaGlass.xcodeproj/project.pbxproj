@@ -8,49 +8,64 @@
 
 /* Begin PBXBuildFile section */
 		023F05C1925021CDD248325A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E0F254AAF771866FFB69AC0 /* Assets.xcassets */; };
-		06D61061E3BE74A78F9CDB10 /* SeaGlassButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE536C03CDA38BFB3B690B5 /* SeaGlassButton.swift */; };
-		100F75231F128F3BAA7E6593 /* GrainGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE2F72F7DD816432BCC186C /* GrainGenerator.swift */; };
-		115A38456F32A25BFD1FF22B /* SeaGlassPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CE82946FD2D1A775E2B495 /* SeaGlassPalette.swift */; };
-		27727C00BD65A2C3EE1CCE54 /* SeaGlassSurface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10569C06A9CF93A5D2C97CA7 /* SeaGlassSurface.swift */; };
-		3A1AC1009F7D56F73E2697DB /* GrainGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE2F72F7DD816432BCC186C /* GrainGenerator.swift */; };
+		03DF9952B404E017D271E12B /* SomeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE40C71D1998BAE6E55BBF78 /* SomeTable.swift */; };
+		212F66A987529AFD148B2C08 /* SeaGlassSurface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2E83F6BF06A15AD317495 /* SeaGlassSurface.swift */; };
+		3002B8CE402DA0625F91288C /* SeaGlassSurface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD2E83F6BF06A15AD317495 /* SeaGlassSurface.swift */; };
 		3A3747B6744007ABC4D2AF0B /* InstagramSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710FC8CD2B17DF130D2D6D6B /* InstagramSceneView.swift */; };
 		3C6F8A20E311FF2381A25BF9 /* ShowcaseSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0146D4FC6AB50B6A6F256A1B /* ShowcaseSceneView.swift */; };
-		45C13A41B48B8418C5293800 /* SeaGlassButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE536C03CDA38BFB3B690B5 /* SeaGlassButton.swift */; };
-		51651D2E2713143AF1C809D6 /* SeaGlassShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32904A73373CD1BE83BA3AE /* SeaGlassShape.swift */; };
+		4F5A9DFD8B744350102FA788 /* GrainGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543DB3E8DC1FAF55D6C4C9E5 /* GrainGenerator.swift */; };
+		5504AE98E096B88EE37C48B3 /* SeaGlassButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87C79F4B62B38C75675D6A /* SeaGlassButton.swift */; };
 		55FAE1F1CF39B08ECDF806E3 /* SeaGlassApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9878EF1CE22B72C08753BEF3 /* SeaGlassApp.swift */; };
-		9581F676FCC408562AB1D10C /* SeaGlassModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61938CA979F6C5DD57E79641 /* SeaGlassModifier.swift */; };
-		A465ECE6A5A36F0DCC0A227B /* SeaGlassPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CE82946FD2D1A775E2B495 /* SeaGlassPalette.swift */; };
-		A6807BE1563A613FDC7D48CC /* SeaGlassSurface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10569C06A9CF93A5D2C97CA7 /* SeaGlassSurface.swift */; };
+		58B3BCB5803F1DD2E2C5F901 /* GrainGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543DB3E8DC1FAF55D6C4C9E5 /* GrainGenerator.swift */; };
+		5C37D721C3CD6B857028F41B /* SeaGlassShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A173B2BB7E8E4E4FA3A3575 /* SeaGlassShape.swift */; };
+		6D48C5521E34220B7213B18C /* SeaGlassPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF79E6FD8CB7AC65AFA61215 /* SeaGlassPalette.swift */; };
+		A23CB521707D2B2E7C58FBCB /* SeaGlassPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF79E6FD8CB7AC65AFA61215 /* SeaGlassPalette.swift */; };
 		AF88D1B347E89E5CB54F1CDA /* SanctuarySceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23AA2F8F3EF8CFB53FCB3FD1 /* SanctuarySceneView.swift */; };
-		B19AFFBD852D674E48B6AB86 /* SeaGlassModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61938CA979F6C5DD57E79641 /* SeaGlassModifier.swift */; };
-		E329293F02FAA370E00E6B25 /* SeaGlassShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32904A73373CD1BE83BA3AE /* SeaGlassShape.swift */; };
+		C20FBF8043B2F7FBBA2FC07F /* SeaGlassShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A173B2BB7E8E4E4FA3A3575 /* SeaGlassShape.swift */; };
+		C6BD16282CB3FCEBB8967B7C /* SeaGlassButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87C79F4B62B38C75675D6A /* SeaGlassButton.swift */; };
+		CEBB0B2B9C8C1CE32E4A3FF0 /* SeaGlassModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009CDCDCE88AC74DF007C04 /* SeaGlassModifier.swift */; };
+		D010D6E50CC8D56ABA8ACA76 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F6215EF11E307C9D18427E /* Storyboard.storyboard */; };
+		E68BC0AEA7C6A64797755C0A /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F6215EF11E307C9D18427E /* Storyboard.storyboard */; };
+		EB4F48D07DF7A8A24D0AC31F /* SeaGlassModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D009CDCDCE88AC74DF007C04 /* SeaGlassModifier.swift */; };
+		F856F1FBAE559F503887170A /* SomeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE40C71D1998BAE6E55BBF78 /* SomeTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0146D4FC6AB50B6A6F256A1B /* ShowcaseSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseSceneView.swift; sourceTree = "<group>"; };
-		10569C06A9CF93A5D2C97CA7 /* SeaGlassSurface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaGlassSurface.swift; sourceTree = "<group>"; };
 		23AA2F8F3EF8CFB53FCB3FD1 /* SanctuarySceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanctuarySceneView.swift; sourceTree = "<group>"; };
 		4E0F254AAF771866FFB69AC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		543DB3E8DC1FAF55D6C4C9E5 /* GrainGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrainGenerator.swift; sourceTree = "<group>"; };
+		5A173B2BB7E8E4E4FA3A3575 /* SeaGlassShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaGlassShape.swift; sourceTree = "<group>"; };
 		60D0B87ABEBA14511BF91FBB /* SeaGlass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SeaGlass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		61938CA979F6C5DD57E79641 /* SeaGlassModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaGlassModifier.swift; sourceTree = "<group>"; };
 		710FC8CD2B17DF130D2D6D6B /* InstagramSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramSceneView.swift; sourceTree = "<group>"; };
-		73CE82946FD2D1A775E2B495 /* SeaGlassPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaGlassPalette.swift; sourceTree = "<group>"; };
-		7CE2F72F7DD816432BCC186C /* GrainGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrainGenerator.swift; sourceTree = "<group>"; };
+		8BD2E83F6BF06A15AD317495 /* SeaGlassSurface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaGlassSurface.swift; sourceTree = "<group>"; };
 		9878EF1CE22B72C08753BEF3 /* SeaGlassApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaGlassApp.swift; sourceTree = "<group>"; };
 		99F3E6444F1DD69D3EDD18EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AC87C79F4B62B38C75675D6A /* SeaGlassButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaGlassButton.swift; sourceTree = "<group>"; };
 		C0E9C5B3A55A6923A352269F /* SeaGlassApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SeaGlassApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CAE536C03CDA38BFB3B690B5 /* SeaGlassButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaGlassButton.swift; sourceTree = "<group>"; };
-		E32904A73373CD1BE83BA3AE /* SeaGlassShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaGlassShape.swift; sourceTree = "<group>"; };
+		CF79E6FD8CB7AC65AFA61215 /* SeaGlassPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaGlassPalette.swift; sourceTree = "<group>"; };
+		D009CDCDCE88AC74DF007C04 /* SeaGlassModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaGlassModifier.swift; sourceTree = "<group>"; };
+		E4F6215EF11E307C9D18427E /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		FE40C71D1998BAE6E55BBF78 /* SomeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		3D3DB89091CEE002BEA55765 = {
 			isa = PBXGroup;
 			children = (
+				780F47D3A9A4235103CB4DFF /* SeaGlass */,
 				3F22B834D717EBB9ED18FA44 /* SeaGlassApp */,
-				CE0EFC5E24F6C93ACCB429B4 /* Sources */,
 				E67E9B25ACB91B2724B283CC /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		3E5ED8F527BCB8B2E1226A10 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				FE40C71D1998BAE6E55BBF78 /* SomeTable.swift */,
+				E4F6215EF11E307C9D18427E /* Storyboard.storyboard */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		3F22B834D717EBB9ED18FA44 /* SeaGlassApp */ = {
@@ -72,6 +87,14 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		780F47D3A9A4235103CB4DFF /* SeaGlass */ = {
+			isa = PBXGroup;
+			children = (
+				F198F9DAE9EA5AB25471FF85 /* Sources */,
+			);
+			path = SeaGlass;
+			sourceTree = "<group>";
+		};
 		8FC1795AEBF15B869050D7CA /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,20 +113,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		CE0EFC5E24F6C93ACCB429B4 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				7CE2F72F7DD816432BCC186C /* GrainGenerator.swift */,
-				CAE536C03CDA38BFB3B690B5 /* SeaGlassButton.swift */,
-				61938CA979F6C5DD57E79641 /* SeaGlassModifier.swift */,
-				73CE82946FD2D1A775E2B495 /* SeaGlassPalette.swift */,
-				E32904A73373CD1BE83BA3AE /* SeaGlassShape.swift */,
-				10569C06A9CF93A5D2C97CA7 /* SeaGlassSurface.swift */,
-			);
-			name = Sources;
-			path = SeaGlass/Sources;
-			sourceTree = "<group>";
-		};
 		E67E9B25ACB91B2724B283CC /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +120,20 @@
 				C0E9C5B3A55A6923A352269F /* SeaGlassApp.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F198F9DAE9EA5AB25471FF85 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				543DB3E8DC1FAF55D6C4C9E5 /* GrainGenerator.swift */,
+				AC87C79F4B62B38C75675D6A /* SeaGlassButton.swift */,
+				D009CDCDCE88AC74DF007C04 /* SeaGlassModifier.swift */,
+				CF79E6FD8CB7AC65AFA61215 /* SeaGlassPalette.swift */,
+				5A173B2BB7E8E4E4FA3A3575 /* SeaGlassShape.swift */,
+				8BD2E83F6BF06A15AD317495 /* SeaGlassSurface.swift */,
+				3E5ED8F527BCB8B2E1226A10 /* New Group */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,6 +144,7 @@
 			buildConfigurationList = 215B31E4C270E446671FBC79 /* Build configuration list for PBXNativeTarget "SeaGlass" */;
 			buildPhases = (
 				D12F9996953F9AEF36901AD6 /* Sources */,
+				B470D8265ABC6D39903D778D /* Resources */,
 			);
 			buildRules = (
 			);
@@ -176,8 +200,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				61798911A04A6A4FA37328D7 /* SeaGlass */,
 				B6E96E27BD0EAF65787791AD /* SeaGlassApp */,
+				61798911A04A6A4FA37328D7 /* SeaGlass */,
 			);
 		};
 /* End PBXProject section */
@@ -188,6 +212,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				023F05C1925021CDD248325A /* Assets.xcassets in Resources */,
+				D010D6E50CC8D56ABA8ACA76 /* Storyboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B470D8265ABC6D39903D778D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E68BC0AEA7C6A64797755C0A /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,16 +231,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A1AC1009F7D56F73E2697DB /* GrainGenerator.swift in Sources */,
+				58B3BCB5803F1DD2E2C5F901 /* GrainGenerator.swift in Sources */,
 				3A3747B6744007ABC4D2AF0B /* InstagramSceneView.swift in Sources */,
 				AF88D1B347E89E5CB54F1CDA /* SanctuarySceneView.swift in Sources */,
 				55FAE1F1CF39B08ECDF806E3 /* SeaGlassApp.swift in Sources */,
-				45C13A41B48B8418C5293800 /* SeaGlassButton.swift in Sources */,
-				B19AFFBD852D674E48B6AB86 /* SeaGlassModifier.swift in Sources */,
-				A465ECE6A5A36F0DCC0A227B /* SeaGlassPalette.swift in Sources */,
-				51651D2E2713143AF1C809D6 /* SeaGlassShape.swift in Sources */,
-				A6807BE1563A613FDC7D48CC /* SeaGlassSurface.swift in Sources */,
+				5504AE98E096B88EE37C48B3 /* SeaGlassButton.swift in Sources */,
+				EB4F48D07DF7A8A24D0AC31F /* SeaGlassModifier.swift in Sources */,
+				A23CB521707D2B2E7C58FBCB /* SeaGlassPalette.swift in Sources */,
+				5C37D721C3CD6B857028F41B /* SeaGlassShape.swift in Sources */,
+				3002B8CE402DA0625F91288C /* SeaGlassSurface.swift in Sources */,
 				3C6F8A20E311FF2381A25BF9 /* ShowcaseSceneView.swift in Sources */,
+				03DF9952B404E017D271E12B /* SomeTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,12 +249,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				100F75231F128F3BAA7E6593 /* GrainGenerator.swift in Sources */,
-				06D61061E3BE74A78F9CDB10 /* SeaGlassButton.swift in Sources */,
-				9581F676FCC408562AB1D10C /* SeaGlassModifier.swift in Sources */,
-				115A38456F32A25BFD1FF22B /* SeaGlassPalette.swift in Sources */,
-				E329293F02FAA370E00E6B25 /* SeaGlassShape.swift in Sources */,
-				27727C00BD65A2C3EE1CCE54 /* SeaGlassSurface.swift in Sources */,
+				4F5A9DFD8B744350102FA788 /* GrainGenerator.swift in Sources */,
+				C6BD16282CB3FCEBB8967B7C /* SeaGlassButton.swift in Sources */,
+				CEBB0B2B9C8C1CE32E4A3FF0 /* SeaGlassModifier.swift in Sources */,
+				6D48C5521E34220B7213B18C /* SeaGlassPalette.swift in Sources */,
+				C20FBF8043B2F7FBBA2FC07F /* SeaGlassShape.swift in Sources */,
+				212F66A987529AFD148B2C08 /* SeaGlassSurface.swift in Sources */,
+				F856F1FBAE559F503887170A /* SomeTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +276,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = dev.mttmcknn.seaglass.app;
+				PRODUCT_NAME = SeaGlassApp;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -264,6 +300,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = dev.mttmcknn.seaglass.framework;
+				PRODUCT_NAME = SeaGlass;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.9;
@@ -289,6 +326,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = dev.mttmcknn.seaglass.framework;
+				PRODUCT_NAME = SeaGlass;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.9;
@@ -367,6 +405,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = dev.mttmcknn.seaglass.app;
+				PRODUCT_NAME = SeaGlassApp;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = "1,2";
